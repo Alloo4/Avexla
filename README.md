@@ -1,109 +1,104 @@
-i
-# Avexla Website 
+# Avexla Website
 
-This project is a responsive website for the Healthcare Technology Solutions company named AVEXLA.
-The Website implements a **Light / Dark Mode toggle**, allowing users to switch themes with a single click. The selected theme is saved using **localStorage**, so the preference persists even after refreshing the page.
+Avexla is a static, responsive website for a healthcare technology advisory company. The site presents Avexla's healthcare IT services, call center modernization offering, company story, and contact information.
 
-The project was built with a strong focus on **clean JavaScript logic**, **CSS variables**, and **good front-end practices**.
+The project uses plain HTML, CSS, and vanilla JavaScript. There are no build tools or package installs required.
 
----
+## Pages
 
-## ✨ Features
+- `index.html` - Homepage with hero, four service pillars, reasons to choose Avexla, solution overview, framework, testimonials, and contact form.
+- `solutions.html` - Detailed healthcare technology solution pages with equal two-column cards for "What we deliver" and "Impact."
+- `callcenter.html` - Call center modernization content, solution cards, expected outcomes, and Avexla differentiators.
+- `about.html` - Company story, mission, vision, values, "Why We're Different," and commitment section.
+- `contact.html` - Contact form page.
 
-* Light and Dark theme toggle
-* Theme preference saved in `localStorage`
-* Icon changes dynamically (Sun ☀️ / Moon 🌙)
-* Banner with fixed image + gradient (not affected by theme)
-* Background colors change correctly without breaking the banner design
-* Fully responsive layout
+## Current Updates
 
----
+Recent design and content updates include:
 
-## 🛠️ Technologies Used
+- Added the new Avexla header logo at `assets/avexla-logo.png`.
+- Updated the header logo across all pages while keeping the existing footer logo unchanged.
+- Improved whole-site responsiveness for desktop, tablet, and mobile.
+- Normalized the header structure, theme toggle, hamburger menu, and mobile navigation across all pages.
+- Updated the Solutions page to use equal-width, balanced cards matching the requested layout.
+- Aligned the About page "Why We're Different" section into clean, readable cards.
+- Replaced outdated Call Center text with Avexla-specific content.
+- Cleaned broken text encoding so punctuation and healthcare terms display properly.
 
-* HTML5
-* CSS3 (CSS Variables & `data-theme`)
-* JavaScript (Vanilla JS)
-* LocalStorage
+## Key Files
 
----
-
-## 🧠 How It Works
-
-The theme system is controlled by a `data-theme` attribute applied to the `<body>` element:
-
-* `data-theme="light"`
-* `data-theme="dark"`
-
-CSS variables handle all color changes, making the theme switch clean and scalable.
-
-JavaScript is responsible for:
-
-* Detecting the saved theme
-* Applying the correct theme on page load
-* Toggling the theme on button click
-* Updating the toggle icon
-
----
-
-## 📂 Project Structure
-
-```
-├── index.html
-├── about.html
-├── style.css
-├── script.js
-└── assets/
-    └── images
+```text
+.
+|-- index.html
+|-- about.html
+|-- solutions.html
+|-- callcenter.html
+|-- contact.html
+|-- style.css
+|-- avexla.js
+`-- assets/
+    |-- avexla-logo.png
+    |-- hero-bg.jpg
+    |-- shield.svg
+    `-- OneDrive_1_29-12-2025/
 ```
 
----
+## How To Open The Site
 
-## 🚀 Getting Started
+Because this is a static website, you can open any HTML file directly in a browser.
 
-1. Clone the repository:
+Recommended for VS Code:
 
-```bash
-git clone https://github.com/your-username/your-repository-name.git
+1. Open this folder in VS Code:
+
+```text
+C:\Users\Convenience\Documents\Codex\2026-05-20\alloo4-avexla-git-https-github-com
 ```
 
-2. Open `index.html` in your browser
+2. Open `index.html`.
+3. Use the VS Code Live Server extension if available, or open the file directly in your browser.
 
-No build tools or dependencies required.
+## How The Theme Works
 
----
+The light/dark mode is controlled by `avexla.js`.
 
-## 📸 Preview
+The script:
 
-> You can add screenshots or a GIF here showing the theme toggle in action.
+- Reads the saved theme from `localStorage`.
+- Applies the theme using the `data-theme` attribute on the `<body>`.
+- Toggles between light and dark mode when the theme button is clicked.
+- Closes the mobile menu when links are selected.
 
----
+Theme colors are managed with CSS variables in `style.css`.
 
-## 💡 What I Learned
+## Responsive Design Notes
 
-* How to manage themes using `data-theme` and CSS variables
-* How to avoid conflicting JavaScript event listeners
-* How to persist UI state using `localStorage`
-* How to debug UI issues caused by duplicated logic
+The site is designed around these viewport groups:
 
----
+- Desktop: `1025px` and wider.
+- Tablet: `641px` to `1024px`.
+- Mobile: `640px` and below.
 
-## 📌 Future Improvements
+Responsive behavior includes:
 
-* Add smooth transition animations between themes
-* Improve accessibility (ARIA labels for toggle button)
-* Add system theme detection (`prefers-color-scheme`)
+- Header navigation collapses into a hamburger menu on smaller screens.
+- Cards move from multi-column layouts to single-column layouts on mobile.
+- Forms and contact details stack cleanly on narrow screens.
+- Footer columns collapse without hiding important links.
+- The Solutions page keeps equal cards on wider screens and stacks them on mobile.
 
----
+## Editing Guide
 
-## 👩‍💻 Author
+Use these files for common changes:
 
-**Duana Aquino**
-Front-End Developer | 3D Artist | Game Dev Student
+- Update site text: edit the matching `.html` page.
+- Update global spacing, colors, cards, and responsive behavior: edit `style.css`.
+- Update theme toggle or mobile menu behavior: edit `avexla.js`.
+- Replace the header logo: replace `assets/avexla-logo.png`.
+- Replace footer logos: update the footer image references in each HTML page.
 
-* GitHub: [https://github.com/DuanaAquino](https://github.com/DuanaAquino)
-* LinkedIn: [https://www.linkedin.com/in/duana-aquino/](https://www.linkedin.com/in/duana-aquino/)
+## No Build Step
 
----
+This project does not require npm, bundlers, or compilation.
 
-⭐ If you liked this project, feel free to star the repository!
+After editing, refresh the browser to see changes.
