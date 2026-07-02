@@ -23,6 +23,8 @@ Recent design and content updates include:
 - Updated the Solutions page to use equal-width, balanced cards matching the requested layout.
 - Aligned the About page "Why We're Different" section into clean, readable cards.
 - Replaced outdated Call Center text with Avexla-specific content.
+- Updated the Contact page layout and mobile spacing for a cleaner, more consistent experience.
+- Updated the site copyright year to 2026 across all pages.
 - Cleaned broken text encoding so punctuation and healthcare terms display properly.
 
 ## Key Files

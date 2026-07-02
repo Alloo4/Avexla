@@ -9,7 +9,7 @@
     <title>Contact</title>
 </head>
 
-<body data-theme="light">
+<body class="contact-page" data-theme="light">
     <header>
         <div id="logo">
             <a href="https://www.avexla.com"><img
@@ -64,29 +64,35 @@
         </div>
     </header>
     <main>
+        <section class="form-title">
+            <h2>Contact Avexla</h2>
+            <p>Tell us about your project or ask a question, and our healthcare technology team will reply within one business day.</p>
+        </section>
         <section class="form-tab-container">
-            <form action="/submit-page" method="POST">
-                <div class="input">
-                    <label for="name">Full Name</label>
-                    <input type="text" class="blank" id="name" name="user_name" required>
-                </div>
-                <div class="input">
-                    <label for="mail">E-mail</label>
-                    <input type="email" class="blank" id="mail" name="user_mail">
-                </div>
-                <div class="input">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="blank" id="phone-number" name="phone_number" pattern="[0-9]{10,11}"
-                        title="Enter a valid phone number using numbers only">
-                </div>
-                <div class="input">
-                    <label for="msg">Message</label>
-                    <textarea id="msg-blank" name="user_message"></textarea>
-                </div>
-                <div class="contact-tab-button">
-                    <button type="submit">Schedule a Consultation</button>
-                </div>
-            </form>
+            <div class="form-area">
+                <form action="/submit-page" method="POST">
+                    <div class="input">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="blank" id="name" name="user_name" required>
+                    </div>
+                    <div class="input">
+                        <label for="mail">E-mail</label>
+                        <input type="email" class="blank" id="mail" name="user_mail">
+                    </div>
+                    <div class="input">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" class="blank" id="phone-number" name="phone_number" pattern="[0-9]{10,11}"
+                            title="Enter a valid phone number using numbers only">
+                    </div>
+                    <div class="input">
+                        <label for="msg">Message</label>
+                        <textarea id="msg-blank" name="user_message"></textarea>
+                    </div>
+                    <div class="contact-tab-button">
+                        <button type="submit">Schedule a Consultation</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
     <footer>
@@ -120,7 +126,7 @@
         </div>
         <div class="copyright">
             <div class="copyright-inner">
-                <p>(c) 2025 IT Security Now. All rights reserved.</p>
+                <p>(c) 2026 IT Security Now. All rights reserved.</p>
             </div>
         </div>
     </footer>

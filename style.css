@@ -784,80 +784,103 @@ a {
     stroke: var(--purple-icon);
 }
 
-/* FORM */
+/* CONTACT FORM */
 
-.form-title {
+.contact-page .form-title {
     text-align: center;
-    font-size: 2rem;
-    padding: 5rem 20rem 1rem;
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+    padding: 4rem 2rem 1.5rem;
+    max-width: 42rem;
+    margin: 0 auto;
 }
 
-.form-title h2 {
+.contact-page .form-title h2 {
     margin-bottom: 1rem;
     color: var(--title-text);
 }
 
-.form-title span {
-    color: var(--blue-icon);
-}
-
-.form-title p {
-    margin-top: 1rem;
+.contact-page .form-title p {
+    margin-top: 0;
     font-size: 1.05rem;
-    line-height: 1.7rem;
+    line-height: 1.8rem;
     color: var(--menu-links);
 }
 
-.form-container {
-    width: 57%;
-    padding: 0 2rem 4rem 5rem;
-    margin-top: 5rem;
-    display: flex;
-    flex-direction: row;
+.contact-page .form-tab-container {
+    width: min(60rem, calc(100% - 2rem));
+    margin: 0 auto 4rem;
+    padding: 0;
 }
 
-.form-area {
+.contact-page .form-area {
     width: 100%;
-    padding: 2rem 4rem 4rem;
-    display: flex;
-    flex-direction: row;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+    background-color: var(--cards-fill);
+    border: 0.01rem solid var(--border);
+    border-radius: 1.25rem;
     padding: 2rem;
-    font-size: .9rem;
-    font-weight: 700;
-    width: 100%;
-    background-color: var(--form-background);
-    border: 0.01rem solid var(--border);
-    border-radius: .6rem;
+    box-shadow: 0 16px 40px rgba(0,0,0,.05);
+    box-sizing: border-box;
 }
 
-.input {
+.contact-page .form-area form {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+}
+
+.contact-page .input {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+}
+
+.contact-page .input label {
     color: var(--title-text);
+    font-weight: 600;
 }
 
-.blank {
-    margin-top: 1rem;
-    border: 0.01rem solid var(--border);
-    width: 33rem;
-    height: 2rem;
-    border-radius: .6rem;
+.contact-page .blank,
+.contact-page #msg-blank {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border: 0.08rem solid var(--border);
+    border-radius: .85rem;
+    background-color: var(--white-text);
+    color: var(--title-text);
+    font-size: 1rem;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
-#msg-blank {
-    margin-top: 1rem;
-    border: 0.01rem solid var(--border);
-    width: 33rem;
-    height: 9rem;
-    border-radius: .6rem;
+.contact-page #msg-blank {
+    min-height: 10rem;
+}
+
+.contact-page .contact-tab-button {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-page .contact-tab-button button {
+    background: var(--button-gradient);
+    color: var(--white-text);
+    font-weight: 800;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    padding: .95rem 1.5rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 24rem;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-page .contact-tab-button button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 24px var(--shadow);
 }
 
 .form-button {
@@ -1315,20 +1338,105 @@ footer a {
 
 /* CONTACT */
 
-.form-tab-container {
-    width: 57%;
-    padding: 0 7rem 0 5rem;
-    margin: 12rem auto;
-    display: flex;
-    flex-direction: row;
+.contact-page main {
+    padding-top: 5.8rem;
 }
 
-.contact-tab {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin-bottom: 2rem;
+.form-title {
+    text-align: center;
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+    padding: 4rem 2rem 1.5rem;
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.form-title h2 {
+    margin-bottom: 1rem;
     color: var(--title-text);
+}
+
+.form-title p {
+    margin-top: 0;
+    font-size: 1.05rem;
+    line-height: 1.8rem;
+    color: var(--menu-links);
+}
+
+.form-tab-container {
+    width: min(60rem, calc(100% - 2rem));
+    margin: 0 auto 4rem;
+    padding: 0;
+}
+
+.form-area {
+    width: 100%;
+    background-color: var(--cards-fill);
+    border: 0.01rem solid var(--border);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 16px 40px rgba(0,0,0,.05);
+    box-sizing: border-box;
+}
+
+.form-area form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+}
+
+.input label {
+    color: var(--title-text);
+    font-weight: 600;
+}
+
+.blank,
+#msg-blank {
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border: 0.08rem solid var(--border);
+    border-radius: .85rem;
+    background-color: var(--white-text);
+    color: var(--title-text);
+    font-size: 1rem;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+#msg-blank {
+    min-height: 10rem;
+}
+
+.contact-tab-button {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-tab-button button {
+    background: var(--button-gradient);
+    color: var(--white-text);
+    font-weight: 800;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    padding: .95rem 1.5rem;
+    cursor: pointer;
+    width: 100%;
+    max-width: 24rem;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-tab-button button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 24px var(--shadow);
 }
 
 .contact-tab-button button {
@@ -1979,6 +2087,21 @@ footer a {
         margin: 0rem;
     }
 
+    .solutions-tab-title,
+    .callcenter-tab-title,
+    .form-tab-container,
+    .solutions-tab-intro,
+    .callcenter-tab-intro {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .solutions-tab-title h2,
+    .callcenter-tab-title h2,
+    .callcenter-tab h2 {
+        margin-top: 2rem !important;
+    }
+
     #ai {
         margin-top: 0;
     }
@@ -2057,9 +2180,17 @@ footer a {
     /* Formulário no Tablet */
     .form-container,
     .form-tab-container {
-        width: 90% !important;
-        padding: 0 2rem !important;
-        margin: 5rem auto !important;
+        width: min(60rem, calc(100% - 2rem)) !important;
+        padding: 0 !important;
+        margin: 3.5rem auto !important;
+    }
+
+    .form-area {
+        padding: 2rem !important;
+    }
+
+    .form-title {
+        padding: 3rem 1.5rem 1rem !important;
     }
 
     /* Footer no Tablet */
@@ -3091,7 +3222,7 @@ footer {
 
     #banner {
         min-height: auto;
-        padding: 7.5rem 2rem 7rem !important;
+        padding: 6rem 2rem 5.5rem !important;
     }
 
     .text-container,
@@ -3182,8 +3313,69 @@ footer {
 
 @media (max-width: 640px) {
     header {
-        min-height: 4.25rem;
-        padding: .65rem .9rem !important;
+        min-height: 4.9rem;
+        padding: .85rem 1rem !important;
+    }
+
+    .contact-page .form-tab-container {
+        width: calc(100% - 1.5rem) !important;
+        max-width: 38rem !important;
+        margin: 3rem auto !important;
+    }
+
+    .contact-page .form-area {
+        padding: 1.5rem !important;
+        border-radius: 1rem !important;
+    }
+
+    .solutions-tab-title,
+    .callcenter-tab-title,
+    .about-us-tab,
+    .form-tab-container {
+        margin-top: 0 !important;
+        padding-top: .75rem !important;
+    }
+
+    .solutions-tab-title h2,
+    .callcenter-tab-title h2,
+    .callcenter-tab h2,
+    .about-us-tab h2 {
+        margin-top: 1.5rem !important;
+    }
+
+    .about-us-tab {
+        padding: 0 1rem !important;
+    }
+
+    .our-story {
+        padding-top: 1rem !important;
+    }
+
+    .contact-page .form-title {
+        padding-top: 6rem !important;
+        padding-bottom: 1.2rem !important;
+    }
+
+    .contact-page main {
+        padding-top: 5.5rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .contact-page .form-tab-container {
+        margin: 3rem auto !important;
+    }
+
+    .form-tab-container {
+        margin: 2.5rem auto !important;
+    }
+
+    .form-area {
+        padding: 1.5rem !important;
+    }
+
+    .blank,
+    #msg-blank {
+        padding: .95rem 1rem !important;
     }
 
     #logo {
@@ -3237,7 +3429,11 @@ footer {
 
     #banner {
         min-height: auto !important;
-        padding: 6.5rem 1rem 6rem !important;
+        padding: 5rem 1rem 4.5rem !important;
+    }
+
+    .credential {
+        margin: 3.25rem auto 0 !important;
     }
 
     #main-title {
