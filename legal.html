@@ -17,7 +17,57 @@
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     </noscript>
-    <link rel="stylesheet" href="style.css">
+    <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+:root{--menu-links:#5b6675;--bg-color:#fff;--header-bg-color:#fffffff2;--credential-bg:#eeeeee1a;--button:#115e59;--button-gradient:linear-gradient(to right,#57e6ff,#2ab9b5);--button-hover:#0D8B5E;--border:#eaedf1;--main-text:#5f6a78;--white-text:#fff;--title-text:#000407cc;--light-blue:#9be8ff;--form-background:#f9fafb;--transparent:transparent}
+[data-theme=dark]{--menu-links:#9aa7b8;--bg-color:#0A1628;--header-bg-color:#0b1220f2;--border:#334155;--main-text:#94a3b8;--title-text:#fff;--form-background:#081325}
+html{scroll-behavior:smooth}
+body{margin:0;font-size:14px;line-height:1.5;background-color:var(--bg-color);color:var(--title-text)}
+img,svg{max-width:100%}
+a{text-decoration:none;color:var(--menu-links)}
+h1{font-size:5rem;font-weight:800}
+h2{font-size:3rem;font-weight:700}
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;gap:clamp(.75rem,2vw,1.5rem);min-height:4.75rem;padding:.85rem clamp(1rem,4vw,4.5rem);background-color:var(--header-bg-color);border-bottom:1px solid var(--border);backdrop-filter:blur(1rem)}
+#logo{display:flex;align-items:center;flex:0 1 auto;min-width:0}
+#logo img{display:block;width:clamp(10.5rem,17vw,14.5rem);height:auto;max-height:3.5rem;object-fit:contain}
+nav{min-width:0}
+nav ul{display:flex;align-items:center;gap:.25rem;flex-wrap:wrap}
+nav ul li{list-style:none;font-size:.9rem;padding:0}
+nav ul li a{display:inline-flex;align-items:center;min-height:2.5rem;padding:0 .9rem;border-radius:.6rem;font-weight:600}
+#nav-buttons{display:flex;align-items:center;gap:.75rem;flex:0 0 auto}
+.theme-toggle,.menu-toggle{width:2.6rem;height:2.6rem;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:.7rem;background-color:var(--form-background)}
+.menu-toggle{display:none;font-size:2rem;color:var(--title-text)}
+.icon-moon{display:none}
+[data-theme=dark] .icon-sun{display:none}
+[data-theme=dark] .icon-moon{display:block}
+.primary-button{display:inline-flex;align-items:center;justify-content:center;width:fit-content;min-height:2.75rem;padding:.8rem 1.1rem;border:0;border-radius:.65rem;font-size:1rem;font-weight:600;background-color:var(--button);color:var(--white-text)}
+.mobile-nav{position:fixed;top:0;right:-100%;width:min(22rem,88vw);height:100vh;z-index:2000;display:flex;flex-direction:column;padding:1.5rem;background-color:var(--bg-color);transition:.4s ease}
+.mobile-nav.active{right:0}
+#banner{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;padding:8rem clamp(1.25rem,6vw,6rem) 7.5rem;background-color:#071a30;background-image:image-set(url("./assets/hero-bg.webp") type("image/webp"),url("./assets/hero-bg.jpg") type("image/jpeg"));background-size:cover;background-position:center}
+#banner::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(5,25,49,.92),rgba(8,61,85,.76)),linear-gradient(180deg,rgba(4,12,24,.3),rgba(4,12,24,.06))}
+.banner-content{position:relative;z-index:3;margin-top:2rem}
+.credential{position:relative;z-index:3;margin:0 auto;display:flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border:.01rem solid var(--light-blue);border-radius:1.5rem;background-color:var(--credential-bg);backdrop-filter:blur(.2rem);color:var(--light-blue);font-size:.85rem;font-weight:700}
+#main-title{max-width:58rem;margin-top:1.4rem;color:var(--white-text);font-weight:800;font-size:clamp(2.75rem,7vw,5.85rem);line-height:.98}
+#main-title span{background:var(--button-gradient);-webkit-background-clip:text;background-clip:text;color:var(--transparent)}
+#banner-content-text{max-width:50rem;margin:1rem auto 0;color:var(--white-text);font-weight:400;line-height:1.6;font-size:clamp(1rem,2vw,1.25rem)}
+.banner-buttons{position:relative;z-index:3;display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem;margin:1.6rem 0 2rem}
+#schedule-button{display:flex;align-items:center;justify-content:center;gap:.55rem;min-height:2.75rem;padding:.8rem 2.5rem;border:0;border-radius:.65rem;font-size:1rem;font-weight:600;background-color:var(--button);color:var(--white-text)}
+.secondary-button{padding:.9rem 3rem;border:.01rem solid var(--main-text);border-radius:.8rem;background-color:var(--credential-bg);backdrop-filter:blur(.2rem);color:var(--white-text);font-size:1rem;font-weight:800}
+.hero-metrics{position:relative;z-index:3;width:min(56rem,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:1rem;overflow:hidden;border:1px solid rgba(155,232,255,.35);border-radius:1rem;background:rgba(255,255,255,.12);color:var(--white-text);backdrop-filter:blur(14px)}
+.hero-metrics div{padding:1rem 1.25rem;background:rgba(255,255,255,.07);text-align:left}
+.hero-metrics strong,.hero-metrics span{display:block}
+.hero-metrics strong{color:var(--light-blue);font-size:1.1rem}
+.hero-metrics span{margin-top:.2rem;font-size:.85rem;color:#eaf1f8}
+.banner-wave{position:absolute;bottom:0;left:0;width:100%;height:120px;z-index:2}
+main{overflow:hidden;margin:0}
+.text-container,.form-title,#focus,.solutions-tab-title,.callcenter-tab-title,.our-story{width:min(72rem,calc(100% - 2rem));margin:0 auto;padding:clamp(4rem,7vw,6rem) 0 1.5rem;text-align:center}
+.text-container h2,#focus h2,.form-title h2,.form-title h1,.our-story h1,.solutions-tab-title h2,.callcenter-tab-title h2,.about-us-tab h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.1;color:var(--title-text)}
+.text-container p,#focus p,.form-title p{max-width:50rem;margin:1rem auto 0;color:var(--menu-links)}
+.contact-page main{padding-top:5.8rem}
+.about-us-tab{margin-top:5rem}
+@media (max-width:1024px){nav{display:none}.menu-toggle{display:inline-flex}#nav-buttons>.primary-button{display:none}header{padding:.75rem 1.25rem}}
+@media (max-width:640px){#banner{min-height:auto;padding:5rem 1rem 4.5rem}.credential{margin:3.25rem auto 0}#main-title{font-size:clamp(2.25rem,12vw,3.15rem)}.banner-buttons{width:100%;flex-direction:column;align-items:stretch}.hero-metrics{grid-template-columns:1fr}.hero-metrics div{text-align:center}#logo img{width:clamp(8.75rem,46vw,11.25rem);max-height:3rem}.theme-toggle,.menu-toggle{width:2.45rem;height:2.45rem}#nav-buttons{gap:.45rem}#schedule-button,.banner-buttons>.secondary-button{width:min(100%,22rem);justify-content:center}}</style>
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 
 <body class="contact-page" data-theme="light">
