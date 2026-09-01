@@ -1,0 +1,8 @@
+# https://www.avexla.com/robots.txt
+User-agent: *
+Allow: /
+
+# Block Vercel preview deployments from being crawled is handled by Vercel's
+# x-robots-tag on *.vercel.app preview URLs, not here.
+
+Sitemap: https://www.avexla.com/sitemap.xml
