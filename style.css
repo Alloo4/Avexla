@@ -6,9 +6,9 @@
 }
 
 :root {
-    --menu-links: #627084;
+    --menu-links: #5b6675;
     --bg-color: #FFFFFF;
-    --header-bg-color: #ffffff80;
+    --header-bg-color: #fffffff2;
     --credential-bg: #eeeeee1a;
     --gradient: linear-gradient(to right, #0b3b6ee6, #0b3b6ecc, #115f5cb3);
     --button: #115e59;
@@ -18,7 +18,7 @@
     --secondary-button-hover: #fefefe4d;
     --border: #eaedf1;
     --cards-fill: #fafbfb;
-    --main-text: #727f91;
+    --main-text: #5f6a78;
     --white-text: #FFFFFF;
     --title-text: #000407cc;
     --light-blue: #9be8ff;
@@ -39,9 +39,9 @@
 }
 
 [data-theme="dark"] {
-    --menu-links: #64748b;
+    --menu-links: #9aa7b8;
     --bg-color: #0A1628;
-    --header-bg-color: #0d1a3680;
+    --header-bg-color: #0b1220f2;
     --credential-bg: #eeeeee1a;
     --gradient: linear-gradient(to right, #0b3b6ee6, #0b3b6ecc, #115f5cb3);
     --button: #115e59;
@@ -308,7 +308,9 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #071a30;
     background-image: url("./assets/hero-bg.jpg");
+    background-image: image-set(url("./assets/hero-bg.webp") type("image/webp"), url("./assets/hero-bg.jpg") type("image/jpeg"));
     background-size: cover;
     background-position: center;
     padding-bottom: 5rem;
@@ -342,7 +344,7 @@ a {
     gap: .5rem;
 }
 
-#banner h3 {
+#banner-content-text {
     max-width: 50rem;
     margin: 1rem auto 0;
     color: var(--white-text);
@@ -434,7 +436,7 @@ a {
     color: var(--transparent);
 }
 
-.banner-content h3 {
+#banner-content-text {
     color: var(--white-text);
     font-weight: 300;
 }
@@ -485,7 +487,7 @@ a {
     cursor: pointer;
 }
 
-.card h5 {
+.card h3 {
     margin-top: 1rem;
     font-size: 1rem;
     font-weight: 600;
@@ -546,7 +548,7 @@ a {
     text-align: center;
 }
 
-.testimonials h4 {
+.testimonials h3 {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--title-text);
@@ -623,7 +625,7 @@ a {
     grid-column: 2;
 }
 
-.card2 h5 {
+.card2 h3 {
     margin-top: 1rem;
     font-size: 1rem;
     font-weight: 600;
@@ -714,7 +716,7 @@ a {
     cursor: pointer;
 }
 
-.list h6 {
+.list h3 {
     font-size: 1.05rem;
     margin-bottom: .6rem;
     font-weight: 600;
@@ -970,8 +972,9 @@ aside {
     border-radius: .5rem;
 }
 
-.contact h6 {
+.contact h3 {
     font-size: 1rem;
+    font-weight: 600;
     color: var(--title-text);
 }
 
@@ -990,9 +993,10 @@ aside {
     margin-top: 2rem;
 }
 
-.partnering h5 {
+.partnering h3 {
     margin: 0 0 1.5rem 2rem;
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .partnering ul {
@@ -1150,11 +1154,12 @@ footer a {
         box-shadow 0.2s ease;
 }
 
-.why-list-item li h6 {
+.why-list-item h3 {
     font-size: 1rem;
+    font-weight: 600;
 }
 
-.why-list-item li p {
+.why-list-item p {
     font-size: .9rem;
     margin-top: .5rem;
 }
@@ -1586,7 +1591,7 @@ footer a {
         padding: .8rem 1rem;
     }
 
-    #banner>h3 {
+    #banner>#banner-content-text {
         padding: 0 2rem;
     }
 
@@ -1615,7 +1620,7 @@ footer a {
     }
 
     /* Garante que o texto dentro do card 2 não fique alinhado à esquerda */
-    .card2 h5,
+    .card2 h3,
     .card2 p {
         text-align: center !important;
     }
@@ -1885,7 +1890,7 @@ footer a {
         margin: 2rem 0 0 0 !important;
     }
 
-    .partnering h5,
+    .partnering h3,
     .partnering ul {
         margin-left: 0 !important;
         padding-left: 0 !important;
@@ -2611,7 +2616,7 @@ nav ul li a:hover {
     letter-spacing: 0;
 }
 
-#banner h3 {
+#banner-content-text {
     max-width: 50rem;
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 400;
@@ -2670,7 +2675,7 @@ nav ul li a:hover {
 .hero-metrics span {
     margin-top: .2rem;
     font-size: .85rem;
-    color: rgba(255, 255, 255, .82);
+    color: #eaf1f8;
 }
 
 main {
@@ -2756,8 +2761,8 @@ main {
     border-radius: .85rem;
 }
 
-.card h5,
-.card2 h5 {
+.card h3,
+.card2 h3 {
     margin-top: 0;
     font-size: 1.05rem;
     line-height: 1.35;
@@ -3440,7 +3445,7 @@ footer {
         font-size: clamp(2.25rem, 12vw, 3.15rem) !important;
     }
 
-    #banner h3 {
+    #banner #banner-content-text {
         padding: 0 !important;
     }
 
@@ -3685,7 +3690,7 @@ footer {
     text-align: left;
 }
 
-.about-difference .why-list-item h6 {
+.about-difference .why-list-item h3 {
     font-size: 1.05rem;
     margin-bottom: .5rem;
 }
@@ -3767,5 +3772,55 @@ footer {
 
     .solutions-tab-card ul {
         font-size: 1rem;
+    }
+}
+
+/* ACCESSIBILITY + TAP TARGET REFINEMENTS */
+
+.form-title h1,
+.our-story h1 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.1;
+    color: var(--title-text);
+}
+
+a.cta-button {
+    text-decoration: none;
+    text-align: center;
+    width: fit-content;
+    min-width: 16rem;
+}
+
+.links a {
+    display: inline-block;
+    padding: .4rem 0;
+    line-height: 1.3;
+}
+
+.links-list li {
+    margin-bottom: .15rem;
+}
+
+.links li:first-child {
+    margin-bottom: 1.4rem;
+}
+
+.footer-legal-link {
+    color: var(--footer-copyright);
+}
+
+.copyright-inner a {
+    color: var(--footer-copyright);
+    text-decoration: underline;
+}
+
+:focus-visible {
+    outline: 2px solid var(--button-hover);
+    outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+    .links a {
+        padding: .55rem 0;
     }
 }
