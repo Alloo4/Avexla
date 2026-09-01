@@ -1025,6 +1025,8 @@ footer a {
 
 .white-logo {
     width: 10rem;
+    height: auto;
+    aspect-ratio: 400 / 76;
     margin-bottom: 1rem;
 }
 
