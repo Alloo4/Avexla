@@ -43,4 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
             if (mobileNav) mobileNav.classList.remove("active");
         });
     });
+
+    // --- LEAD TRACKING (Google Tag Manager dataLayer) ---
+    // Fires on any form submit and on primary CTA clicks so GTM can build
+    // "lead" triggers without touching this code again.
+    window.dataLayer = window.dataLayer || [];
+
+    document.querySelectorAll("form").forEach(form => {
+        form.addEventListener("submit", () => {
+            window.dataLayer.push({
+                event: "lead_form_submit",
+                form_id: form.getAttribute("id") || "contact_form"
+            });
+        });
+    });
+
+    document.querySelectorAll("a, button").forEach(el => {
+        const label = (el.textContent || "").trim().toLowerCase();
+        if (/get started|talk to an expert|schedule a|contact us|book a/.test(label)) {
+            el.addEventListener("click", () => {
+                window.dataLayer.push({
+                    event: "cta_click",
+                    cta_text: (el.textContent || "").trim().slice(0, 60)
+                });
+            });
+        }
+    });
 });
